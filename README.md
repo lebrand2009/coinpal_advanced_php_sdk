@@ -7,6 +7,8 @@
 
 **Compatible with PHP 5.4 and above (Recommended to use PHP 5.6 and above)**
 
+-----
+
 **TESTING :**
 Grab a copy to your server and visit https://yourdomain.com/coinpalsetup.php
 
