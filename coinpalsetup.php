@@ -5,6 +5,7 @@
    File coinpalsetup.php
    Version #1.01
 */
+
   if ( session_status() != PHP_SESSION_ACTIVE ) { session_start(); }
   $session_id = session_id();
   $timestamp = time();
