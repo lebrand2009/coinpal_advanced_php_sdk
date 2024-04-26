@@ -24,4 +24,4 @@ There will be added more fields in the config array in order to integrate more s
 
 The goal is to have an almost entirely GUI environment so that integration by novice users (and not only) will be as easy as possible.
 
-The motives behind the development of this SDK are only the Kaspa ecosystem although of course CoinPal payments is not only for Kaspa.
+The motives behind the development of this SDK are only the **Kaspa Ecosystem** although of course **CoinPal** payments is not only for Kaspa.
