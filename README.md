@@ -1,7 +1,7 @@
 # coinpal_advanced_php_sdk
 **CoinPal Payments advanced PHP SDK**
 
-**NOTE : Coinpal's files are not yet integrated in the repo**.
+**NOTE : Coinpal's files are not yet integrated in the repo. INITIAL DEVELOPMENT STAGE!**.
 
 **ATTENTION : Use only fake data for testing, until the login system is integrated!!!**
 
