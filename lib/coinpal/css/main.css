@@ -1,0 +1,253 @@
+.navbar-brand {
+     padding: 0;
+}
+ .navbar-brand img {
+     max-height: 100%;
+     max-width: 100%;
+}
+ .footer {
+     background-color: #343A40;
+     color: #ffffff;
+     padding: 8px 0;
+}
+ .footer-content {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+ #fshowleft {
+     text-align: left;
+     padding-left: 20px;
+     display: flex;
+     align-items: center;
+}
+ #fshowright {
+     text-align: right;
+     padding-right: 20px;
+     display: flex;
+     align-items: center;
+}
+ @media (max-width: 768px) {
+    /* Adjust the max-width value as needed */
+     #fshowleft {
+         text-align: left;
+         padding-left: 10px;
+    }
+     #fshowright {
+         text-align: right;
+         padding-right: 10px;
+    }
+}
+ .bottom-xdata {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+}
+ .form-group {
+     margin-bottom: 20px;
+}
+ .form-label {
+     font-weight: bold;
+}
+ .form-control {
+     height: 40px;
+     font-size: 14px;
+}
+ .signup-container {
+	 position: relative;
+	 width: 800px;
+     max-width: 800px;
+     margin: 0 auto;
+     margin-top: 30px;
+     padding: 20px;
+     background-color: #ffffff;
+     border-radius: 4px;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.lebrand-credits {
+     position: absolute;
+	 bottom: 8px;
+	 left: 20px;
+	 font-size:75%;
+}
+
+ .contactus-container {
+     max-width: 600px;
+     margin: 0 auto;
+     margin-top: 30px;
+     padding: 20px;
+     background-color: #ffffff;
+     border-radius: 4px;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+ .container {
+     display: flex;
+     justify-content: center;
+	 margin-bottom: 200px;
+}
+
+
+ .flex-container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     max-width: 1000px;
+     margin: 0 auto;
+}
+ .signup-title {
+     text-align: center;
+     font-size: 24px;
+     font-weight: bold;
+     margin-bottom: 20px;
+}
+ .signup-form {
+     margin-bottom: 20px;
+}
+ .signup-btn {
+     width: 100%;
+}
+ .signup-links {
+     text-align: center;
+}
+ .profile-container {
+     max-width: 600px;
+     margin: 0 auto;
+     margin-top: 30px;
+     padding: 20px;
+     background-color: #ffffff;
+     border-radius: 4px;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+ .profile-title {
+     text-align: center;
+     font-size: 24px;
+     font-weight: bold;
+     margin-bottom: 20px;
+}
+ .profile-form {
+     margin-bottom: 20px;
+}
+ .profile-btn {
+     width: 100%;
+}
+ .profile-links {
+     text-align: center;
+}
+
+ .stripe-configuration-container {
+     max-width: 800px;
+     margin: 0 auto;
+     margin-top: 30px;
+     padding: 20px;
+     background-color: #ffffff;
+     border-radius: 4px;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+ .stripe-configuration-title {
+     text-align: center;
+     font-size: 24px;
+     font-weight: bold;
+     margin-bottom: 20px;
+}
+ .stripe-configuration-form {
+     margin-bottom: 20px;
+}
+ .stripe-configuration-btn {
+     width: 100%;
+}
+ .stripe-configuration-links {
+     text-align: center;
+}
+ .competitors-container {
+     max-width: 600px;
+     margin: 0 auto;
+     margin-top: 30px;
+     padding: 20px;
+     background-color: #ffffff;
+     border-radius: 4px;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+ .competitors-title {
+     text-align: center;
+     font-size: 24px;
+     font-weight: bold;
+     margin-bottom: 20px;
+}
+ .competitors-form {
+     margin-bottom: 20px;
+}
+ .competitors-btn {
+     width: 100%;
+}
+ .competitors-links {
+     text-align: center;
+}
+ #urlContainer, #placeholderContainer, #contentContainer {
+     padding: 10px;
+}
+ #placeholdershow {
+     margin-top: 10px;
+     border: 1px solid #ccc;
+     padding: 10px;
+     white-space: pre-wrap;
+}
+ #htmlanalysis {
+     margin-top: 10px;
+     border: 1px solid #ccc;
+     padding: 10px;
+}
+ .pagination .page-item.active .page-link {
+     background-color: #EE161F;
+     border-color: #EE161F;
+}
+
+.indent-0 {
+    margin-left: 0;
+}
+
+.indent-1 {
+    margin-left: 20px;
+}
+
+.indent-2 {
+    margin-left: 40px;
+}
+
+.indent-3 {
+    margin-left: 60px;
+}
+
+.indent-4 {
+    margin-left: 80px;
+}
+
+.indent-5 {
+    margin-left: 100px;
+}
+
+.indent-6 {
+    margin-left: 120px;
+}
+
+.indent-7 {
+    margin-left: 140px;
+}
+
+.indent-8 {
+    margin-left: 160px;
+}
+
+.indent-9 {
+    margin-left: 180px;
+}
+
+
+.sticky-row {
+  position: fixed;
+  background-color: white;	
+}
+
