@@ -9,7 +9,10 @@
 
 **TESTING :**
 Grab a copy to your server and visit https://yourdomain.com/coinpalsetup.php
+
 You can place the files in any directory other that your root. Just keep the file coinpalsetup.php one dir level up from the lib dir.
+
+-----
 
 The main concept is to automate the PHP SDK integration creating a universal solution for websites that are not based on ready made e-commerce platforms or CMS. 
 
