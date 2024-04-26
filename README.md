@@ -12,16 +12,16 @@
 **TESTING :**
 Grab a copy to your server and visit https://yourdomain.com/coinpalsetup.php
 
-You can place the files in any directory other than your root. Just keep the file coinpalsetup.php one level up from the lib directory.
+You can place the files in any directory other than your root. Just keep the file **coinpalsetup.php** one level up from the lib directory.
 
 -----
 
 The main concept is to automate the PHP SDK integration creating a universal solution for websites that are not based on ready made e-commerce platforms or CMS. 
 
-At this early development stage you can test the functionallity of reading and writing to the config.php file using GUI form. The form is auto created from the keys and values of the config array and when submited it's writing (for now) the new array back in the config.php file.
+At this early development stage you can test the functionallity of reading and writing to the **config.php** file using **GUI form**. The form is auto created from the keys and values of the config array and when submited it's writing (for now) the new array back in the config.php file.
 
-There will be added more fields in the config array in order to integrate more settings, including DB credentials. Since this is done, I will automate the DB tables creation and all settings will also be inserted into a DB table. After that, since DB credentials exists, the system will be writing and reading with priority from the DB but will be still creating the config file where from we will be always reading the settings for compatibility issues. (I have explained this in the relative project files).
+There will be added more fields in the config array in order to integrate more settings, including DB credentials. Since this is done, I will automate the DB tables creation and all settings will also be inserted into a DB table. After that, since DB credentials exist, the system will be writing and reading with DB priority but will be still creating the config file where from we will always be reading the settings for compatibility issues. (I have explained this in the relative project files).
 
-The goal is to have an almost entirely gui environment so that integration by novice users is as easy as possible.
+The goal is to have an almost entirely GUI environment so that integration by novice users (and not only) will be as easy as possible.
 
-The motives behind the development of this SDK are only the Kaspa ecosystem although of course CoinPal payments if not only for Kaspa.
+The motives behind the development of this SDK are only the Kaspa ecosystem although of course CoinPal payments is not only for Kaspa.
