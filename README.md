@@ -1,5 +1,5 @@
-# coinpal_advanced_php_sdk
-**CoinPal Payments advanced PHP SDK**
+# CoinPal Payments advanced PHP SDK
+**Le Brand REAL IT Solutions - https://xdata.gr - Charis Chrysochoou**
 
 **NOTE : Coinpal's files are not yet integrated in the repo. INITIAL DEVELOPMENT STAGE!**.
 
