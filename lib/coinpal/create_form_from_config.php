@@ -1,7 +1,6 @@
 <?php
 
   if ( session_status() != PHP_SESSION_ACTIVE ) { session_start(); }
-
   require_once('config.php');
 
 function generateInputHtml($key, $value) {
@@ -15,13 +14,10 @@ function generateInputHtml($key, $value) {
             </div>';
 }
 
-
 $html = '';
 foreach ($config as $key => $value) {
     $html .= generateInputHtml($key, $value);
 }
 
 echo $html;
-
-
 ?>
