@@ -1,5 +1,10 @@
 <?php
-
+/*
+   Le Brand REAL IT Solutions - https://xdata.gr
+   CoinPal Advanced PHP SDK 
+   File create_form_from_config.php
+   Version #1.01
+*/
   if ( session_status() != PHP_SESSION_ACTIVE ) { session_start(); }
 
   require_once('config.php');
