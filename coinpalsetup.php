@@ -5,6 +5,7 @@
    File coinpalsetup.php
    Version #1.01
 */
+
   if ( session_status() != PHP_SESSION_ACTIVE ) { session_start(); }
   $session_id = session_id();
   $timestamp = time();
@@ -21,7 +22,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X-Data GR - CoinPal Settings</title>
+    <title>CoinPal PHP SDK Settings</title>
 </head>
 <body>
     <div id="mainContainer" class="container" style="margin-top:100px">
