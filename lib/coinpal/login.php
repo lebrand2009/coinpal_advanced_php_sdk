@@ -4,6 +4,15 @@
    CoinPal Advanced PHP SDK 
    File coinpalsetup.php
    Version #1.01
+   
+   Statuses Appendix :
+   =============================================
+   0. Ready for initial user setup
+   1. Initial user setup is done
+   2. Logged Out Successfully
+   3. Logged In Successfully
+   4. Invalid username or password
+   
 */
   include('user.php');
   header('Content-Type: application/json');
