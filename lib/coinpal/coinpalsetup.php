@@ -28,7 +28,7 @@
 
       $response = array(
           "status" => 1,
-		  "text"   => "Settings processed successfully"
+	  "text"   => "Settings processed successfully"
           //"text"   => "Settings processed successfully (".$session_id.")"
       );
 		
