@@ -126,7 +126,6 @@ if ($user['username'] === '' || $user['password'] === '') {
         }
     }
 
-
     /*
     echo "<h2>Login</h2>";
     echo "<form method='post'>";
@@ -135,16 +134,5 @@ if ($user['username'] === '' || $user['password'] === '') {
     echo "<input type='submit' value='Login'>";
     echo "</form>";
     */
-
-
 }
-
-
-
-
-
-
-
-
-
 ?>
