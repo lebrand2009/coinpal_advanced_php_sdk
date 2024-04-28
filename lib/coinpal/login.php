@@ -5,14 +5,13 @@
    File coinpalsetup.php
    Version #1.01
    
-   Statuses Appendix :
-   =============================================
-   0. Ready for initial user setup
-   1. Initial user setup is done
-   2. Logged Out Successfully
-   3. Logged In Successfully
-   4. Invalid username or password
-   
+    Statuses Appendix :
+    ============================================
+    0. Ready for initial user setup
+    1. Initial user setup is done
+    2. Logged Out Successfully
+    3. Logged In Successfully
+    4. Invalid username or password   
 */
   include('user.php');
   header('Content-Type: application/json');
@@ -30,7 +29,6 @@
     } else {
 		$loginFlag = 0;
     }
-
 
 if ($user['username'] === '' || $user['password'] === '') {
 
@@ -51,7 +49,6 @@ if ($user['username'] === '' || $user['password'] === '') {
 
       echo json_encode($response);	
 	
-
     if (isset($_POST['setup_username']) && isset($_POST['setup_password'])) {
 
         $user['username'] = $_POST['setup_username'];
