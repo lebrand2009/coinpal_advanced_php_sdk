@@ -14,7 +14,7 @@
 **HOW TO TEST IT :**
 Grab a copy to your server and visit https://yourdomain.com/coinpalsetup.php
 
-You can place the files in any directory other than your root. Just keep the file **coinpalsetup.php** one level up from the lib directory.
+You can place the files in any directory other than your root. Just keep the file **coinpalsetup.php** in the same directory where the **lib** directory is.
 
 -----
 
