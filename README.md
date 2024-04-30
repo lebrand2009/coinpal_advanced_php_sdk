@@ -3,7 +3,7 @@
 
 **NOTE : Coinpal's files are not yet integrated in the repo. INITIAL DEVELOPMENT STAGE!**.
 
-**ATTENTION : Use only fake data for testing, until the login system is integrated!!!**
+**ATTENTION : Use only fake data for testing!!!**
 
 **COMPATIBLE with PHP 5.4 and above (Recommended to use PHP 5.6 and above)**
 
