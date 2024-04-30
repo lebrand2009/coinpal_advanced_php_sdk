@@ -22,7 +22,7 @@ The main concept is to automate the PHP SDK integration creating a universal sol
 
 At this early stage of development you can test the functionality of reading and writing to the **config.php** file using **GUI form**. The form is auto created from the keys and values of the config array and when submited it's writing (for now) the new array back in the config.php file.
 
-There will be added more fields in the config array in order to integrate more settings, including DB credentials. Since this is done, I will automate the DB tables creation and all settings will also be inserted into a DB table. After that, since DB credentials exist, the system will be writing and reading with DB priority but will be still creating the config file where from we will always be reading the settings for compatibility issues. (I have explained this in the relative project files).
+Login system code completed and integrated. Next step is to automate the DB tables creation (since DB credentials exist) and all settings will also be inserted into a DB table. After that, since DB credentials exist, the system will be writing and reading with DB priority but will be still creating the config file where from we will always be reading the settings for compatibility issues. (I have explained this in the relative project files).
 
 The goal is to have an almost entirely GUI environment so that integration by novice users (and not only) will be as easy as possible.
 
