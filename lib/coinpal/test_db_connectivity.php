@@ -14,7 +14,7 @@ try {
     $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
-    $stmt = $pdo->query("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = '$dbName'");
+	$stmt = $pdo->query("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = '$dbName'");
     $tableCount = $stmt->fetchColumn();
 	
     $stmt = $pdo->query("SELECT VERSION()");
@@ -33,18 +33,22 @@ try {
 
     $stmt = $pdo->query("SELECT ENGINE FROM information_schema.ENGINES WHERE SUPPORT = 'DEFAULT'");
     $engine = $stmt->fetchColumn();
-		
+	
+    //$stmt = $pdo->query("SELECT @@hostname");
+    //$hostInfo = $stmt->fetchColumn();
+	
+	
     echo 'Database connection successful!<br><br>
-	  Total number of tables : '.$tableCount.'<br>
-          Database collation : '.$collation.'<br>
-	  MySQL Server Version : '.$serverVersion.'<br>
-	  PDO MySQL Driver Version : '.$pdoVersion.'<br>
-	  Maximum allowed packet size : '.(($maxPacketSize/1024)/1024).' MB<br>
-	  Database character set : '.$charset.'<br>
-	  Database engine : '.$engine.'<br>
-	 ';
+	      Total number of tables : '.$tableCount.'<br>
+		  Database collation : '.$collation.'<br>
+		  MySQL Server Version : '.$serverVersion.'<br>
+		  PDO MySQL Driver Version : '.$pdoVersion.'<br>
+		  Maximum allowed packet size : '.(($maxPacketSize/1024)/1024).' MB<br>
+		  Database character set : '.$charset.'<br>
+		  Database engine : '.$engine.'<br>
+		  ';
 	
 } catch (PDOException $e) {
-    echo 'Database connection failed: ' . $e->getMessage();
+    echo 'Database connection failed!<br><br>' . $e->getMessage();
 }
 ?>

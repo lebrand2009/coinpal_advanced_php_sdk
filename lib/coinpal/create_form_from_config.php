@@ -7,7 +7,9 @@
 */
   if ( session_status() != PHP_SESSION_ACTIVE ) { session_start(); }
 
-  require_once('config.php');
+  if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+
+require_once('config.php');
 
 function generateInputHtml($key, $value) {
     $label = '';
@@ -111,11 +113,21 @@ function generateInputHtml($key, $value) {
 
 
 $html = '';
+	  
+$html .= '<h2 class="signup-title" style="color:#7DCDBA;"><img src="/lib/coinpal/img/coinpal.png" title="CoinPal Payments Advanced PHP SDK" width="150"><br><hr>Advanced PHP SDK Settings<br><span style="font-size:65%"><a href="https://xdata.gr" title="Visit Le Brand REAL IT Solutions" target="_blank">Le Brand REAL IT Solutions</a></span></h2><hr><form class="signup-form" id="coinpalsetup" action="lib/coinpal/coinpalsetup.php" method="post">';	  
+	  
 foreach ($config as $key => $value) {
     $html .= generateInputHtml($key, $value);
 }
+	  
+$html .= '<button type="button" id="checkconn" class="btn btn-warning signup-btn" style="font-weight:bold">Test DB Connectivity</button><br><br><button type="submit" class="btn btn-primary signup-btn" style="background-color:#7DCDBA;border: 2px solid #353A40;color: #353A40;font-size:160%;font-weight:bold">Submit</button></form><div class="signup-links" style="padding-top:10px">Do you need help? <a target="_blank" title="Visit GitHub official project page" href="https://github.com/lebrand2009/coinpal_advanced_php_sdk">Read me</a></div><hr><div class="lebrand-credits"><a href="https://xdata.gr" title="Visit Le Brand REAL IT Solutions" target="_blank">Le Brand REAL IT Solutions</a></div>';	  
 
 echo $html;
 
+  } else {
+	  
+	  header("Location: https://pricex.gr/coinpalsetup.php");
+      exit;  
+  }
 
 ?>

@@ -5,13 +5,15 @@
    File coinpalsetup.php
    Version #1.01
    
-    Statuses Appendix :
-    ============================================
-    0. Ready for initial user setup
-    1. Initial user setup is done
-    2. Logged Out Successfully
-    3. Logged In Successfully
-    4. Invalid username or password   
+   Statuses Appendix :
+   =============================================
+   0. Ready for initial user setup
+   1. Initial user setup is done
+   2. Logged Out Successfully
+   3. Logged In Successfully
+   4. Invalid username or password
+   5. Ready for user login
+   
 */
   include('user.php');
   header('Content-Type: application/json');
@@ -23,79 +25,85 @@
     $session_id = session_id();
     $timestamp = time();
 
-    if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
-                //echo "<a href='?logout=1'>Logout</a>";
-		$loginFlag = 1;
-    } else {
-		$loginFlag = 0;
+
+    if (isset($_SESSION['login']) && $_SESSION['login'] === true && !isset($_POST['logout']) && !isset($_POST['userreset'])) {
+		
+            $response = array(
+                "status"    => 3,
+                "text"      => "Logged In Successfully",
+				"loginflag" => 1
+            );
+			
+			echo json_encode($response);
+			exit;		
     }
 
-if ($user['username'] === '' || $user['password'] === '') {
 
-    /*
-    echo "<h2>Setup</h2>";
-    echo "<form method='post'>";
-    echo "Username: <input type='text' name='setup_username'><br>";
-    echo "Password: <input type='password' name='setup_password'><br>";
-    echo "<input type='submit' value='Set'>";
-    echo "</form>";
-    */
-
-      $response = array(
-          "status"    => 0,
-          "text"      => "Ready for initial user setup",
-	  "loginflag" => 0
-      );
-
-      echo json_encode($response);	
-	
     if (isset($_POST['setup_username']) && isset($_POST['setup_password'])) {
-
-        $user['username'] = $_POST['setup_username'];
-        $user['password'] = password_hash($_POST['setup_password'], PASSWORD_ARGON2ID);
+		
+            $user['username'] = $_POST['setup_username'];
+            $user['password'] = password_hash($_POST['setup_password'], PASSWORD_ARGON2ID);
         
-	$userFilePath = "user.php";
-        $userContent = "<?php\n\$user = " . var_export($user, true) . ";\n?>";
-
-        file_put_contents($userFilePath, $userContent);
+		    $userFilePath = "user.php";
+            $userContent = "<?php\n\$user = " . var_export($user, true) . ";\n?>";
 		
-        $_SESSION['login'] = true;
+            file_put_contents($userFilePath, $userContent);
 		
-        $response = array(
-            "status"    => 1,
-            "text"      => "Initial setup is done",
-	    "loginflag" => 1
-        );
+            $_SESSION['login'] = true;
+		
+            $response = array(
+                "status"    => 1,
+                "text"      => 'Initial user setup is done!<br><br>Username : '.$_POST['setup_username'].'<br>Password : '.substr($_POST['setup_password'], 0, 2).'...<br><br>Logged In Successfully!',
+			    "loginflag" => 1
+            );
 
-        echo json_encode($response);
-
-	/*
-        header("Location: ".$_SERVER['PHP_SELF']);
-        exit;
-        */
+            echo json_encode($response);
+		    exit;
     }
 	
-} else {
-		
-    if (isset($_GET['logout']) && $_GET['logout'] == 1) {
 
+    if (isset($_POST['logout']) && $_POST['logout'] == 1) {
+		
         $_SESSION = array();
         session_destroy();
 		
         $response = array(
             "status"    => 2,
             "text"      => "Logged Out Successfully",
-	    "loginflag" => 0
+			"loginflag" => 0
         );
-	
-        /*
-        header("Location: ".$_SERVER['PHP_SELF']);
-        exit;
-        */
+		
+		echo json_encode($response);
+		exit;
     }
 
-    if (isset($_POST['username']) && isset($_POST['password'])) {
 
+    if (isset($_POST['userreset']) && $_POST['userreset'] == 1) {
+		
+        $user['username'] = '';
+        $user['password'] = '';
+        
+	    $userFilePath = "user.php";
+        $userContent = "<?php\n\$user = " . var_export($user, true) . ";\n?>";
+		
+        file_put_contents($userFilePath, $userContent);
+		
+        $_SESSION = array();
+        session_destroy();
+		
+        $response = array(
+             "status"    => 0,
+             "text"      => "Ready for initial user setup.<br><br>Please provide Username and Password!",
+		     "loginflag" => 0
+         );
+
+         echo json_encode($response);
+	     exit;
+    }
+
+
+    if (isset($_POST['username']) && isset($_POST['password'])) {
+		
         $username = $_POST['username'];
         $password = $_POST['password'];
 
@@ -104,32 +112,51 @@ if ($user['username'] === '' || $user['password'] === '') {
 
             $response = array(
                 "status"    => 3,
-                "text"      => "Logged In Successfully",
-	        "loginflag" => 1
+                "text"      => "Logged In Successfully!",
+				"loginflag" => 1
             );
-	
-	    /*
-            header("Location: ".$_SERVER['PHP_SELF']);
-            exit;
-	    */
-
+			
+			echo json_encode($response);
+			exit;
+			
         } else {
 			
             $response = array(
                 "status"    => 4,
-                "text"      => "Invalid username or password",
-	        "loginflag" => 1
-            );			
+                "text"      => "Invalid username or password!",
+				"loginflag" => 1
+            );
+			
+			echo json_encode($response);
+			exit;
         }
     }
 
-    /*
-    echo "<h2>Login</h2>";
-    echo "<form method='post'>";
-    echo "Username: <input type='text' name='username'><br>";
-    echo "Password: <input type='password' name='password'><br>";
-    echo "<input type='submit' value='Login'>";
-    echo "</form>";
-    */
-}
+
+    if ($user['username'] === '' || $user['password'] === '') {
+
+          $response = array(
+              "status"    => 0,
+              "text"      => "Ready for initial user setup",
+		      "loginflag" => 0
+          );
+
+          echo json_encode($response);
+	      exit;		
+	}
+
+
+    if ($user['username'] != '' || $user['password'] != '') {
+
+          $response = array(
+              "status"    => 5,
+              "text"      => "Ready for user login",
+		      "loginflag" => 0
+          );
+
+          echo json_encode($response);
+	      exit;		
+	}
+
+
 ?>

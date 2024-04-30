@@ -13,12 +13,15 @@
   header('Content-Type: application/json');
 
   if ( session_status() != PHP_SESSION_ACTIVE ) { session_start(); }
+
+  if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+
   $session_id = session_id();
   $timestamp = time();
 
-   // Comment the following 2 lines when you're in production env! 
-      ini_set('display_errors', 1);
-      error_reporting(E_ALL);
+  // Comment the following 2 lines when you're in production env! 
+  ini_set('display_errors', 1);
+  error_reporting(E_ALL);
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $configArray = $_POST; 
@@ -28,19 +31,31 @@
 
       $response = array(
           "status" => 1,
-	  "text"   => "Settings processed successfully"
-          //"text"   => "Settings processed successfully (".$session_id.")"
+		  "text"   => "Settings processed successfully"
       );
 		
       echo json_encode($response);
-	
+	  exit;
+	  
   } else {
 	
       $response = array(
-          "status" => 0,
+          "status" => 2,
           "text"   => "Error: Invalid request method"
       );
 
-      echo json_encode($response);	
+      echo json_encode($response);
+	  exit;
   }
+	  
+  } else {
+	  
+          $response = array(
+              "status"    => 5,
+              "text"      => "Please login",
+		      "loginflag" => 0
+          );	  
+      echo json_encode($response);
+	  exit;	  
+  }	  
 ?>
