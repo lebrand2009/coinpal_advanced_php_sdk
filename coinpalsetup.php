@@ -5,17 +5,19 @@
    File coinpalsetup.php
    Version #1.01
 */
+    if (session_status() != PHP_SESSION_ACTIVE) {
+        session_start();
+    }
 
-  if ( session_status() != PHP_SESSION_ACTIVE ) { session_start(); }
-  $session_id = session_id();
-  $timestamp = time();
-  $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
-  $domain = $_SERVER['HTTP_HOST'];
-  $fullUrl = $protocol . $domain;
+    $session_id = session_id();
+    $timestamp = time();
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
+    $domain = $_SERVER['HTTP_HOST'];
+    $fullUrl = $protocol . $domain;
 
-   // Comment the following 2 lines when you're in production env! 
-      ini_set('display_errors', 1);
-      error_reporting(E_ALL);
+ // Comment the following 2 lines when you're in production env! 
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
 ?>
 <!DOCTYPE html>
 <html lang="en">
